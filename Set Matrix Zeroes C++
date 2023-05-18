@@ -1,0 +1,38 @@
+class Solution {
+public:
+    void setZeroes(vector<vector<int>>& matrix) {
+
+        vector<int> rowhold (matrix.size());
+        vector<int> colhold (matrix[0].size());
+
+        for(int i = 0; i < matrix.size(); i++){
+            for(int k = 0; k < matrix[0].size(); k++){
+                    if(matrix[i][k] == 0){
+                        rowhold[i] = 1111; // random marker
+                        colhold[k] = 1111;
+                    }
+
+
+            }
+         } // once marked
+
+            //set values to 0
+         for(int a = 0; a < matrix.size(); a++){
+            for(int b = 0; b < matrix[0].size(); b++){
+                        if(rowhold[a] == 1111){
+                            matrix[a][b] = 0;
+                        }
+                        if(colhold[b] == 1111){
+                           matrix[a][b] = 0;
+                        }
+
+
+            }
+         }
+
+
+
+
+
+    }
+};
