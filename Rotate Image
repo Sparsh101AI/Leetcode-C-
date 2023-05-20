@@ -1,0 +1,21 @@
+class Solution {
+public:
+    void rotate(vector<vector<int>>& matrix) {
+        //first transpose
+        for(int i = 0 ; i < matrix.size(); i++){
+            for(int k = 0 ; k < i; k++){
+                swap(matrix[i][k], matrix[k][i]);
+            }
+        }
+        // now were at -90 degrees
+        //reverse rows to make 90 degress
+
+        for(int a = 0; a < matrix.size(); a++){
+        reverse(matrix[a].begin(), matrix[a].end());
+        }
+
+        // now we have rotated it 90 degrees!
+
+        }
+       
+};
