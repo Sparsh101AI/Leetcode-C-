@@ -1,0 +1,13 @@
+class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+       sort(nums.begin(), nums.end());
+       int missing = 0;
+       for(int i = 0; i < nums.size();i++){
+           if(nums[i] != i){
+              return i; // until here we check to see if number within constraint exits and if it does return
+           }
+       } 
+    return nums.size(); // else uf number not in constraint it is the endpoint and return that
+    }
+};
