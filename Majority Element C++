@@ -1,0 +1,10 @@
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        int mE = nums.size()/2;
+        return nums[mE];
+    }
+};
+
+//note that majority element must appear when n/2 so if we sort the majority element must be in the n/2 index of a given array!
