@@ -1,0 +1,34 @@
+class Solution {
+public:
+    bool isValid(string s) {
+        bool flagger = true;
+        stack <char> holder;
+        
+    for(int i = 0; i < s.size(); i++){
+        if(s[i] == '(' || s[i] =='{' || s[i] == '['){
+            holder.push(s[i]);
+        } else{
+            if(!holder.empty()){
+            if( (s[i] == ')' && holder.top() == '(') || (s[i] == '}' && holder.top() == '{') || (s[i] == ']' && holder.top() == '[')){
+                holder.pop();
+            } else {
+                return false;
+            }
+            }
+            else{ 
+                return false;
+            }
+        }
+    }
+
+if (holder.empty())
+        {
+            return true ; 
+        }
+        return false ;
+    
+
+
+
+    }
+};
