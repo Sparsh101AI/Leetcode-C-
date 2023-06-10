@@ -1,0 +1,37 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };                                                                 //Idea is to convert to a string and check if that string is a palindrome!
+ */
+class Solution {
+public:
+    bool isPalindrome(ListNode* head) {
+       string holder;
+        while(head != NULL){
+            holder += head->val;
+            head = head->next;
+        }
+        
+
+
+        string comp = holder;
+        reverse(comp.begin(), comp.end());
+        if(comp == holder){
+            return true;
+        }else{
+            return false;
+        }
+
+        
+
+
+
+
+
+    }
+};
