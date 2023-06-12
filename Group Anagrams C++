@@ -1,0 +1,27 @@
+class Solution {
+public:
+    vector<vector<string>> groupAnagrams(vector<string>& strs) {
+        vector<vector<string>> giver;
+        unordered_map<string, vector<string>> holder;
+
+        
+        for(int i = 0; i < strs.size(); i++){
+            string s = strs[i];
+            sort(strs[i].begin(), strs[i].end()); // sort each word to pattern match
+            holder[strs[i]].push_back(s); //at each unique key push word
+                                          //be careful you dont change the array itself
+        }
+
+        //now translate map to vector
+        for(auto i : holder){
+            giver.push_back(i.second); //at each map uniqe key push entire vector to second coloum!
+        }
+
+
+        return giver;
+
+
+
+
+    }
+};
