@@ -1,0 +1,33 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {            //method is to translate elements to vector then sort then translate back to list!
+public:
+    ListNode* sortList(ListNode* head) {
+        vector<int> holder;
+        ListNode*temp = head;
+        while(temp!= NULL){
+            holder.push_back(temp->val);
+            temp = temp->next;
+        }
+        
+        sort(holder.begin(),holder.end());
+        ListNode*temp2 = head;
+        int i = 0;
+        while(temp2!= NULL){
+            temp2->val = holder[i];
+            i++;
+            temp2 = temp2->next;
+        }
+        return head;
+
+
+    }
+};
