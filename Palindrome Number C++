@@ -1,0 +1,13 @@
+class Solution {
+public:
+    bool isPalindrome(int x) {
+    string holder = to_string(x);
+    int v = holder.size();
+    for(int i = 0; i< holder.size(); i++){
+        if(holder[i] != holder[v-i-1]){
+            return false;
+        }
+    }
+    return true;
+    }
+};
