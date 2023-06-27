@@ -1,0 +1,33 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* mergeKLists(vector<ListNode*>& lists) { 
+        vector<int> holder;
+        for(int i = 0 ; i < lists.size(); i++){
+        while(lists[i] != NULL){
+            holder.push_back(lists[i]->val);
+            lists[i] = lists[i]->next;
+        }
+        }
+
+        sort(holder.begin(), holder.end());
+        reverse(holder.begin(), holder.end());
+
+        ListNode*start = NULL;
+        for(int i =0; i < holder.size(); i++){
+            start = new ListNode(holder[i], start);
+        }
+        return start; //because were returning the ending so reversing the array/vector will return the beggening
+
+
+    }
+};
