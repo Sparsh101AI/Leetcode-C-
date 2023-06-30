@@ -9,7 +9,7 @@
  * };
  */
 class Solution {
-public:
+public:                                                                //pointers
     void insertAtTail(ListNode *&head, ListNode *&tail, int d){
         ListNode *temp = new ListNode(d);
         if(head==NULL){
