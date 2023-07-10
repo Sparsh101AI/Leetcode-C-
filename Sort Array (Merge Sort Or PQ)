@@ -1,0 +1,18 @@
+class Solution {
+public:
+    vector<int> sortArray(vector<int>& nums)  // Approach 1, using a prioirty_queue
+    {
+        priority_queue<int,vector<int>, greater<int>> pq;
+        for(int i =0;i<nums.size();i++)
+        {
+            pq.push(nums[i]);
+        }
+        vector<int> vec;
+        while(!pq.empty())
+        {
+            vec.push_back(pq.top());
+            pq.pop();
+        }
+        return vec;
+    }
+};
