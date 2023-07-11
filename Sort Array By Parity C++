@@ -1,0 +1,19 @@
+class Solution {
+public:
+    vector<int> sortArrayByParity(vector<int>& nums) {
+     
+     vector<int> sender;
+     //first pass for even
+     for(int i =0 ; i < nums.size(); i++){
+         if(nums[i]%2 == 0){
+                sender.push_back(nums[i]);
+         }
+     } // second pass for odd
+     for(int i =0; i < nums.size(); i++){
+         if(nums[i] %2 != 0){
+             sender.push_back(nums[i]);
+         }
+     }
+     return sender;
+    }
+};
