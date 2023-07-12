@@ -1,0 +1,25 @@
+class Solution {
+public:
+    string sortSentence(string s) {
+        string result;
+      vector<pair<int,string>>p;//we make a vector and a pair so that we can sort the values;
+      istringstream ss(s);   //so the we can convert the string into the words..
+      string word;
+      while(ss >> word){
+          int index=word[word.length()-1];//to find out the value of index;
+          word.pop_back();  //pop the last integer value
+          p.push_back({index,word});//than we push the integer and the string int the vector in form of pair
+      }
+
+      sort(p.begin(),p.end());//than we sort the vector accounding to the integer
+
+      for(auto & it:p){
+          result +=it.second;//than push the values in the result string from the vector
+          result+=' ';      //adding spaces after every word
+      }
+      result.pop_back();//pop the last space
+      return result;
+    }
+};
+
+
