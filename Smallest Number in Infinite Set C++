@@ -1,0 +1,33 @@
+class SmallestInfiniteSet {
+public:
+    set<int> holder;
+    int x = 1;
+
+    SmallestInfiniteSet() {
+        x = 1;
+        holder.clear();
+    }
+    
+    int popSmallest() {
+        if(holder.empty()){
+            return x++;
+        }
+        int y = *holder.begin();
+        holder.erase(y);
+        return y;
+        
+    }
+    
+    void addBack(int num) {
+        if(num  < x){
+            holder.insert(num);
+        }
+    }
+};
+
+/**
+ * Your SmallestInfiniteSet object will be instantiated and called as such:
+ * SmallestInfiniteSet* obj = new SmallestInfiniteSet();
+ * int param_1 = obj->popSmallest();
+ * obj->addBack(num);
+ */
