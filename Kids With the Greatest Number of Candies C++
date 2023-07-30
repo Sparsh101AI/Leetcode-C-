@@ -1,0 +1,27 @@
+class Solution {
+public:
+    vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
+     
+     vector<bool> holder;
+     int max = -1;
+     for(int i= 0; i < candies.size(); i++){
+         if(candies[i] > max){
+             max = candies[i]; // finds the max value in array
+         }
+     }
+
+
+     for(int i=0 ; i < candies.size(); i++){
+         if(candies[i]+extraCandies >= max){
+             holder.push_back(true);
+         }else{
+             holder.push_back(false);
+         }
+     }
+
+
+    return holder;
+
+
+    }
+};
