@@ -15,7 +15,7 @@ public:                                                                //pointer
         if(head==NULL){
             head = temp;
             tail = temp;
-        }
+    }
         else{
             tail->next = temp;
             tail = temp;
