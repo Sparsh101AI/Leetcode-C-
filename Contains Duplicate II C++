@@ -6,7 +6,7 @@ public:
             holder.push_back({nums[i],i});
         }
         sort(holder.begin(), holder.end()); //sorts the value (nums[i])
-       int index = 0;
+       int index = 0; // 
         for(int i = 1; i < nums.size(); i++){ 
             if(holder[i].first == holder[index].first){
                 if(abs(holder[i].second - holder[index].second) <= k){
