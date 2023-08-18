@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool containsDuplicate(vector<int>& nums) {
+    bool containsDuplicate(vector<int>& nums) { // double check
         sort(nums.begin(), nums.end());
         bool flagger = false;
         int index = 0;
