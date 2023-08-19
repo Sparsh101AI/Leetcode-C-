@@ -4,7 +4,7 @@ public:
         vector<pair<int,int>> holder;
         for(int i = 0; i < nums.size(); i++){
             holder.push_back({nums[i],i});
-        }
+        } // adder
         sort(holder.begin(), holder.end()); //sorts the value (nums[i])
        int index = 0; // 
         for(int i = 1; i < nums.size(); i++){ 
