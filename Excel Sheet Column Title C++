@@ -5,7 +5,7 @@ public:
         string ans;
         
         while(columnNumber){
-            if(columnNumber%26 == 0){ //
+            if(columnNumber%26 == 0){ /
                 ans +='Z';
                 columnNumber--;
             }
